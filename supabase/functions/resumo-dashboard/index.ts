@@ -1,5 +1,5 @@
 // Edge Function: indicadores do painel (executa com as permissões do usuário logado).
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient } from "@supabase/supabase-js";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

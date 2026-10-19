@@ -1,6 +1,6 @@
 // Edge Function: valida CPF/CNPJ (dígitos verificadores) e devolve o valor formatado.
 // POST { "documento": "123.456.789-09" }
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient } from "@supabase/supabase-js";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

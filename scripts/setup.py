@@ -73,8 +73,10 @@ def deploy_functions(env):
         boundary = uuid.uuid4().hex
         parts = []
         meta = {"entrypoint_path": "index.ts", "name": slug, "verify_jwt": False}
+        if (fn_dir / "deno.json").exists():
+            meta["import_map_path"] = "deno.json"
         parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="metadata"\r\n\r\n{json.dumps(meta)}\r\n'.encode())
-        for f in sorted(fn_dir.rglob("*.ts")):
+        for f in sorted([*fn_dir.rglob("*.ts"), *fn_dir.glob("deno.json")]):
             rel = f.relative_to(fn_dir).as_posix()
             parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{rel}"\r\n'
                          f"Content-Type: application/typescript\r\n\r\n".encode() + f.read_bytes() + b"\r\n")
