@@ -15,6 +15,33 @@ const fmtDate = (d) => (d ? d.split("-").reverse().join("/") : "—");
 const fmtBRL = (n) => Number(n || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 const today = () => new Date().toISOString().slice(0, 10);
 const fmtSize = (b) => (b == null ? "" : b < 1024 ? `${b} B` : b < 1048576 ? `${(b / 1024).toFixed(1)} KB` : `${(b / 1048576).toFixed(1)} MB`);
+const digits = (v) => String(v ?? "").replace(/\D/g, "");
+
+// 111.111.111-11 (até 11 dígitos) ou 11.222.333/0001-81 (12 a 14 dígitos)
+function maskDoc(v) {
+  const d = digits(v).slice(0, 14);
+  if (d.length <= 11) {
+    return d.replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+  }
+  return d.replace(/^(\d{2})(\d)/, "$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
+    .replace(/\.(\d{3})(\d)/, ".$1/$2").replace(/(\d{4})(\d)/, "$1-$2");
+}
+
+// (71)9 2222-2222 (celular, 11 dígitos) ou (71)2222-2222 (fixo, 10 dígitos)
+function maskPhone(v) {
+  const d = digits(v).slice(0, 11);
+  if (!d) return "";
+  if (d.length <= 2) return `(${d}`;
+  const ddd = d.slice(0, 2), r = d.slice(2);
+  if (d.length === 11) return `(${ddd})${r[0]} ${r.slice(1, 5)}-${r.slice(5)}`;
+  return r.length > 4 ? `(${ddd})${r.slice(0, 4)}-${r.slice(4)}` : `(${ddd})${r}`;
+}
+
+function applyMask(input, mask) {
+  input.value = mask(input.value);
+  input.addEventListener("input", () => (input.value = mask(input.value)));
+}
+
 const safeName = (n) => n.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^\w.\-]/g, "_");
 
 function toast(msg, kind = "") {
@@ -185,15 +212,23 @@ const forms = {
     title: (r) => (r ? "Editar cliente" : "Novo cliente"),
     fields: (r = {}) => `
       <label class="full">Nome<input name="nome" required value="${esc(r.nome)}" /></label>
-      <label>CPF/CNPJ<input name="cpf_cnpj" required value="${esc(r.cpf_cnpj)}" placeholder="000.000.000-00" /></label>
-      <label>Telefone<input name="telefone" value="${esc(r.telefone)}" placeholder="(11) 90000-0000" /></label>
+      <label>CPF/CNPJ<input name="cpf_cnpj" required inputmode="numeric" maxlength="18" value="${esc(r.cpf_cnpj)}" placeholder="000.000.000-00" /></label>
+      <label>Telefone<input name="telefone" inputmode="numeric" maxlength="15" value="${esc(r.telefone)}" placeholder="(71)9 2222-2222" /></label>
       <label class="full">Endereço<input name="endereco" value="${esc(r.endereco)}" /></label>`,
+    bind(form) {
+      applyMask($("[name=cpf_cnpj]", form), maskDoc);
+      applyMask($("[name=telefone]", form), maskPhone);
+    },
     async payload(f) {
+      const doc = digits(f.get("cpf_cnpj"));
+      if (doc.length !== 11 && doc.length !== 14) throw new Error("CPF deve ter 11 dígitos e CNPJ 14 dígitos");
+      const tel = digits(f.get("telefone"));
+      if (tel && tel.length !== 10 && tel.length !== 11) throw new Error("Telefone deve ter DDD + 8 ou 9 dígitos");
       // Edge Function valida CPF/CNPJ e devolve formatado
       const { data, error } = await supabase.functions.invoke("validar-documento", { body: { documento: f.get("cpf_cnpj") } });
       if (error) throw new Error(`Validação: ${error.message}`);
       if (!data.valido) throw new Error(data.mensagem);
-      return { nome: f.get("nome").trim(), cpf_cnpj: data.formatado, telefone: f.get("telefone").trim() || null, endereco: f.get("endereco").trim() || null };
+      return { nome: f.get("nome").trim(), cpf_cnpj: data.formatado, telefone: tel ? maskPhone(tel) : null, endereco: f.get("endereco").trim() || null };
     },
   },
   obras: {
