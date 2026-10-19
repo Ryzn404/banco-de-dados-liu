@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestão de Obras</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ LOGIN ============ -->
+  <section id="login-view" class="login-wrap" hidden>
+    <form id="login-form" class="login-card">
+      <div class="brand"><span class="logo">▣</span> Gestão de Obras</div>
+      <p class="muted">Entre com seu usuário</p>
+      <label>Usuário<input name="usuario" autocomplete="username" required placeholder="liu" /></label>
+      <label>Senha<input name="senha" type="password" autocomplete="current-password" required /></label>
+      <button class="btn primary" type="submit">Entrar</button>
+      <p id="login-error" class="error" hidden></p>
+    </form>
+  </section>
+
+  <!-- ============ APP ============ -->
+  <div id="app-view" class="app" hidden>
+    <aside class="sidebar">
+      <div class="brand"><span class="logo">▣</span> Gestão de Obras</div>
+      <nav>
+        <button data-tab="dashboard" class="active">Painel</button>
+        <button data-tab="clientes">Clientes</button>
+        <button data-tab="obras">Obras</button>
+        <button data-tab="notas">Notas Fiscais</button>
+        <button data-tab="arquivos">Arquivos</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="rt"><span id="rt-dot" class="dot"></span><span id="rt-label">Realtime…</span></div>
+        <div id="user-label" class="muted small"></div>
+        <button id="logout" class="btn ghost small">Sair</button>
+      </div>
+    </aside>
+
+    <main>
+      <!-- Painel -->
+      <section data-panel="dashboard">
+        <header class="page-head">
+          <h1>Painel</h1>
+          <button id="refresh-dash" class="btn ghost">Atualizar</button>
+        </header>
+        <p class="muted small">Indicadores calculados pela Edge Function <code>resumo-dashboard</code>.</p>
+        <div id="kpis" class="kpis"></div>
+        <div class="card">
+          <h2>Faturamento — últimos 6 meses</h2>
+          <div id="chart" class="bars"></div>
+        </div>
+      </section>
+
+      <!-- Clientes -->
+      <section data-panel="clientes" hidden>
+        <header class="page-head">
+          <h1>Clientes</h1>
+          <div class="actions">
+            <input class="search" data-search="clientes" placeholder="Buscar…" />
+            <button class="btn primary" data-new="clientes">+ Novo cliente</button>
+          </div>
+        </header>
+        <div class="card table-wrap">
+          <table>
+            <thead><tr><th>Nome</th><th>CPF/CNPJ</th><th>Telefone</th><th>Endereço</th><th></th></tr></thead>
+            <tbody id="tb-clientes"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Obras -->
+      <section data-panel="obras" hidden>
+        <header class="page-head">
+          <h1>Obras</h1>
+          <div class="actions">
+            <input class="search" data-search="obras" placeholder="Buscar…" />
+            <button class="btn primary" data-new="obras">+ Nova obra</button>
+          </div>
+        </header>
+        <div class="card table-wrap">
+          <table>
+            <thead><tr><th>Cliente</th><th>Endereço</th><th>Início</th><th>Previsão término</th><th>Serviços</th><th>Status</th><th></th></tr></thead>
+            <tbody id="tb-obras"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Notas -->
+      <section data-panel="notas" hidden>
+        <header class="page-head">
+          <h1>Notas Fiscais</h1>
+          <div class="actions">
+            <input class="search" data-search="notas" placeholder="Buscar…" />
+            <button class="btn primary" data-new="notas">+ Nova nota</button>
+          </div>
+        </header>
+        <div class="card table-wrap">
+          <table>
+            <thead><tr><th>Número</th><th>Emissão</th><th>Cliente</th><th>Obra</th><th class="num">Valor total</th><th></th></tr></thead>
+            <tbody id="tb-notas"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Arquivos (Storage) -->
+      <section data-panel="arquivos" hidden>
+        <header class="page-head">
+          <h1>Arquivos</h1>
+          <label class="btn primary" id="explorer-upload-label">+ Enviar arquivo
+            <input type="file" id="explorer-upload" multiple hidden />
+          </label>
+        </header>
+        <p class="muted small">Bucket <code>documentos</code>, organizado em pastas: <code>clientes/</code>, <code>obras/</code>, <code>notas-fiscais/</code> e <code>geral/</code>.</p>
+        <nav id="crumbs" class="crumbs"></nav>
+        <div class="card"><ul id="explorer" class="file-list"></ul></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ============ MODAIS ============ -->
+  <dialog id="form-dialog">
+    <form id="entity-form" method="dialog">
+      <h2 id="form-title"></h2>
+      <div id="form-fields" class="fields"></div>
+      <p id="form-error" class="error" hidden></p>
+      <footer>
+        <button type="button" class="btn ghost" data-close>Cancelar</button>
+        <button type="submit" class="btn primary" id="form-submit">Salvar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog id="files-dialog">
+    <div class="files-box">
+      <h2 id="files-title">Arquivos</h2>
+      <p class="muted small">Pasta: <code id="files-path"></code></p>
+      <label class="btn primary small">+ Enviar arquivo<input type="file" id="files-upload" multiple hidden /></label>
+      <ul id="files-list" class="file-list"></ul>
+      <footer><button type="button" class="btn ghost" data-close>Fechar</button></footer>
+    </div>
+  </dialog>
+
+  <dialog id="confirm-dialog">
+    <div class="files-box">
+      <h2>Confirmar</h2>
+      <p id="confirm-text"></p>
+      <footer>
+        <button type="button" class="btn ghost" id="confirm-no">Cancelar</button>
+        <button type="button" class="btn danger" id="confirm-yes">Excluir</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <div id="toasts" class="toasts"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
