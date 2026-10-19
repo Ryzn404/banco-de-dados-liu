@@ -57,6 +57,7 @@
         <header class="page-head">
           <h1>Clientes</h1>
           <div class="actions">
+            <label class="check small"><input type="checkbox" id="mostrar-arquivados" /> Mostrar arquivados</label>
             <input class="search" data-search="clientes" placeholder="Buscar…" />
             <button class="btn primary" data-new="clientes">+ Novo cliente</button>
           </div>
@@ -67,6 +68,7 @@
             <tbody id="tb-clientes"></tbody>
           </table>
         </div>
+        <div class="pager" data-pager="clientes" hidden></div>
       </section>
 
       <!-- Obras -->
@@ -84,6 +86,7 @@
             <tbody id="tb-obras"></tbody>
           </table>
         </div>
+        <div class="pager" data-pager="obras" hidden></div>
       </section>
 
       <!-- Notas -->
@@ -101,6 +104,7 @@
             <tbody id="tb-notas"></tbody>
           </table>
         </div>
+        <div class="pager" data-pager="notas" hidden></div>
       </section>
 
       <!-- Arquivos (Storage) -->
@@ -143,7 +147,7 @@
 
   <dialog id="confirm-dialog">
     <div class="files-box">
-      <h2>Confirmar</h2>
+      <h2 id="confirm-title">Confirmar</h2>
       <p id="confirm-text"></p>
       <footer>
         <button type="button" class="btn ghost" id="confirm-no">Cancelar</button>

@@ -1,4 +1,5 @@
 // Edge Function: indicadores do painel (executa com as permissões do usuário logado).
+// As somas são feitas no banco (função SQL resumo_dashboard), sem o limite de 1000 linhas por consulta.
 import { createClient } from "@supabase/supabase-js";
 
 const corsHeaders = {
@@ -12,54 +13,20 @@ const json = (body: unknown, status = 200) =>
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
+  const authorization = req.headers.get("Authorization") ?? "";
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
-    Deno.env.get("SUPABASE_ANON_KEY")!,
-    { global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } } },
+    req.headers.get("apikey") ?? Deno.env.get("SUPABASE_ANON_KEY")!,
+    {
+      global: { headers: { Authorization: authorization } },
+      auth: { persistSession: false, autoRefreshToken: false },
+    },
   );
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await supabase.auth.getUser(authorization.replace(/^Bearer\s+/i, ""));
   if (!user) return json({ error: "Não autenticado" }, 401);
 
-  const [clientes, obras, notas] = await Promise.all([
-    supabase.from("clientes").select("id", { count: "exact", head: true }),
-    supabase.from("obras").select("id, data_inicio, previsao_termino"),
-    supabase.from("notas_fiscais").select("valor_total, data_emissao"),
-  ]);
-  const erro = clientes.error ?? obras.error ?? notas.error;
-  if (erro) return json({ error: erro.message }, 500);
+  const { data, error } = await supabase.rpc("resumo_dashboard");
+  if (error) return json({ error: error.message }, 500);
 
-  const hoje = new Date().toISOString().slice(0, 10);
-  const listaObras = obras.data ?? [];
-  const obrasAndamento = listaObras.filter((o) =>
-    o.data_inicio <= hoje && (!o.previsao_termino || o.previsao_termino >= hoje)
-  ).length;
-  const obrasAtrasadasOuConcluidas = listaObras.filter((o) => o.previsao_termino && o.previsao_termino < hoje).length;
-  const obrasFuturas = listaObras.filter((o) => o.data_inicio > hoje).length;
-
-  const listaNotas = notas.data ?? [];
-  const faturamentoTotal = listaNotas.reduce((s, n) => s + Number(n.valor_total), 0);
-
-  // Faturamento dos últimos 6 meses (AAAA-MM)
-  const porMes: Record<string, number> = {};
-  const base = new Date();
-  for (let i = 5; i >= 0; i--) {
-    const d = new Date(base.getFullYear(), base.getMonth() - i, 1);
-    porMes[`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`] = 0;
-  }
-  for (const n of listaNotas) {
-    const mes = String(n.data_emissao).slice(0, 7);
-    if (mes in porMes) porMes[mes] += Number(n.valor_total);
-  }
-
-  return json({
-    totalClientes: clientes.count ?? 0,
-    totalObras: listaObras.length,
-    obrasAndamento,
-    obrasPrazoVencido: obrasAtrasadasOuConcluidas,
-    obrasFuturas,
-    totalNotas: listaNotas.length,
-    faturamentoTotal,
-    faturamentoPorMes: Object.entries(porMes).map(([mes, valor]) => ({ mes, valor })),
-    geradoEm: new Date().toISOString(),
-  });
+  return json({ ...data, geradoEm: new Date().toISOString() });
 });

@@ -125,6 +125,14 @@ td.empty { text-align: center; color: var(--muted); padding: 28px; }
 .badge.ok { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
 .badge.warn { background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn); }
 .badge.info { background: color-mix(in srgb, var(--primary) 16%, transparent); color: var(--primary); }
+.badge.muted { background: var(--surface-2); color: var(--muted); }
+tr.archived td { color: var(--muted); }
+
+/* Paginação */
+.pager { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 10px; }
+.pager .btn:disabled { cursor: default; opacity: .45; }
+.actions { align-items: center; }
+label.check.small { font-size: 12px; white-space: nowrap; }
 
 /* Painel */
 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 12px 0 16px; }

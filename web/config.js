@@ -1,8 +1,11 @@
-// Configuração pública do front-end (somente chaves públicas — nunca a service role!)
+// Configuração pública do front-end. Use só a chave publicável (sb_publishable_...);
+// a chave secreta (sb_secret_...) nunca deve aparecer aqui.
 export const SUPABASE_URL = "https://igepbhxmmmihgzbemdat.supabase.co";
-export const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlnZXBiaHhtbW1paGd6YmVtZGF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI0MzQ2MTIsImV4cCI6MjEwODAxMDYxMn0.k6Xs_7fuea5Z7t1v0eEiOTRngGuGBHlGApvJ22aU7Go";
+export const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_0sBR1yWOMY1TclkDWfSaLA_V6niEuwm";
 
 // Login por nome de usuário: "liu" vira "liu@obras.local"
 export const LOGIN_DOMAIN = "obras.local";
 export const BUCKET = "documentos";
+
+// Fuso usado para "hoje" (datas padrão e status das obras)
+export const TIMEZONE = "America/Sao_Paulo";
