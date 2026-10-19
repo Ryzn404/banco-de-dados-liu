@@ -37,6 +37,17 @@ function maskPhone(v) {
   return r.length > 4 ? `(${ddd})${r.slice(0, 4)}-${r.slice(4)}` : `(${ddd})${r}`;
 }
 
+// R$1.900,00 — os dígitos entram pelos centavos; máx. 14 dígitos (coluna numeric(14,2))
+function maskMoney(v) {
+  const d = digits(v).replace(/^0+/, "").slice(0, 14);
+  if (!d) return "";
+  const cents = d.padStart(3, "0");
+  const int = cents.slice(0, -2).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `R$${int},${cents.slice(-2)}`;
+}
+const moneyToNumber = (v) => Number(digits(v) || 0) / 100;
+const numberToMoney = (n) => (n == null || n === "" ? "" : maskMoney(String(Math.round(Number(n) * 100))));
+
 function applyMask(input, mask) {
   input.value = mask(input.value);
   input.addEventListener("input", () => (input.value = mask(input.value)));
@@ -273,16 +284,18 @@ const forms = {
       <label>Data de emissão<input type="date" name="data_emissao" required value="${esc(r.data_emissao ?? today())}" /></label>
       <label class="full">Cliente<select name="cliente_id" required>${clienteOptions(cid)}</select></label>
       <label class="full">Obra<select name="obra_id">${obraOptions(cid, r.obra_id)}</select></label>
-      <label class="full">Valor total (R$)<input type="number" name="valor_total" min="0" step="0.01" required value="${esc(r.valor_total)}" /></label>`;
+      <label class="full">Valor total (R$)<input name="valor_total" inputmode="numeric" required value="${esc(numberToMoney(r.valor_total))}" placeholder="R$0,00" /></label>`;
     },
     bind(form) {
       const sel = $("[name=cliente_id]", form);
       sel.onchange = () => ($("[name=obra_id]", form).innerHTML = obraOptions(sel.value));
+      applyMask($("[name=valor_total]", form), maskMoney);
     },
     async payload(f) {
+      if (!digits(f.get("valor_total"))) throw new Error("Informe o valor total");
       return {
         numero: f.get("numero").trim(), data_emissao: f.get("data_emissao"), cliente_id: f.get("cliente_id"),
-        obra_id: f.get("obra_id") || null, valor_total: Number(f.get("valor_total")),
+        obra_id: f.get("obra_id") || null, valor_total: moneyToNumber(f.get("valor_total")),
       };
     },
   },
