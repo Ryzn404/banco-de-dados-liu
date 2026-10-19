@@ -19,7 +19,6 @@ Medição de obras e controle de notas fiscais emitidas — CRUD com Supabase.
 ## Rodar
 
 ```powershell
-copy .env.example .env          # e preencha as chaves (Project Settings > API Keys)
 python scripts/setup.py         # Auth, usuário admin, migrações novas e Edge Functions (idempotente)
 python serve.py                 # http://localhost:5173
 python scripts/smoke_test.py    # teste ponta a ponta (cria e apaga registros de teste)
