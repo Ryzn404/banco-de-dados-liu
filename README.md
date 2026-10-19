@@ -1,4 +1,6 @@
-# Gestão de Obras — CRUD com Supabase
+# banco-de-dados-liu
+
+Medição de obras e controle de notas fiscais emitidas — CRUD com Supabase.
 
 | Recurso Supabase | Onde |
 |---|---|
