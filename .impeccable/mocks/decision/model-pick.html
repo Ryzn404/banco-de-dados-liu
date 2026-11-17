@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Prancha com Carimbo — esboço</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;800&family=Chivo+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#ffffff;--traco:#141414;--fino:#c9ced6;--azul:#1d4fa3;--rev:#c8102e;--muted:#5d6470}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#eef0f3;font-family:Chivo,system-ui,sans-serif;color:var(--traco);padding:18px}
+.sheet{background:var(--papel);border:2px solid var(--traco);height:100%;display:grid;grid-template-rows:auto 1fr;outline:1px solid var(--traco);outline-offset:6px}
+.top{display:flex;align-items:stretch;border-bottom:2px solid var(--traco)}
+.brand{padding:16px 22px;border-right:1px solid var(--traco);font-weight:800;font-size:22px;letter-spacing:.02em;text-transform:uppercase}
+.tabs{display:flex}
+.tabs a{padding:20px 22px;font-size:15px;color:var(--traco);text-decoration:none;border-right:1px solid var(--fino);font-family:"Chivo Mono";text-transform:uppercase;letter-spacing:.06em}
+.tabs a.on{background:var(--azul);color:#fff}
+.top .act{margin-left:auto;display:flex;gap:10px;align-items:center;padding:0 18px}
+.btn{font:600 14px Chivo;padding:10px 16px;border:1.5px solid var(--azul);color:var(--azul);background:#fff;text-transform:uppercase;letter-spacing:.05em}
+.btn.p{background:var(--azul);color:#fff}
+.body{display:grid;grid-template-columns:1fr 520px;min-height:0}
+.list{padding:22px 26px;border-right:1px solid var(--traco)}
+h1{font-size:34px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{font:600 12px "Chivo Mono";text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:10px 8px;border-bottom:2px solid var(--traco)}
+td{padding:14px 8px;border-bottom:1px solid var(--fino)}
+td.n{font-family:"Chivo Mono";font-variant-numeric:tabular-nums}
+tr.sel td{background:#eaf0fa}
+.rev{display:inline-block;border:1.5px solid var(--rev);color:var(--rev);font:600 12px "Chivo Mono";padding:2px 6px;transform:rotate(-2deg)}
+.ok{font:600 12px "Chivo Mono";color:var(--azul)}
+.side{display:grid;grid-template-rows:1fr auto;min-height:0}
+.draw{padding:22px;background-image:linear-gradient(var(--fino) 1px,transparent 1px),linear-gradient(90deg,var(--fino) 1px,transparent 1px);background-size:24px 24px;opacity:.9;position:relative}
+.draw p{position:absolute;left:22px;bottom:18px;font:600 13px "Chivo Mono";color:var(--azul);background:#fff;padding:4px 8px;border:1px solid var(--azul)}
+.carimbo{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:2px solid var(--traco)}
+.c{border-right:1px solid var(--traco);border-bottom:1px solid var(--traco);padding:8px 12px;min-height:62px}
+.c:nth-child(3n){border-right:0}
+.c.w2{grid-column:span 2}.c.w3{grid-column:span 3}
+.c span{display:block;font:600 11px "Chivo Mono";text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.c b{display:block;font-size:20px;font-weight:800;margin-top:4px}
+.c b.m{font-family:"Chivo Mono";font-weight:600}
+</style></head><body>
+<div class="sheet">
+  <header class="top">
+    <div class="brand">Gestão de Obras</div>
+    <nav class="tabs"><a href="#">Painel</a><a href="#">Clientes</a><a class="on" href="#">Obras</a><a href="#">Notas fiscais</a><a href="#">Arquivos</a></nav>
+    <div class="act"><button class="btn">Anexar</button><button class="btn p">+ Nova obra</button></div>
+  </header>
+  <div class="body">
+    <section class="list">
+      <h1>Obras</h1>
+      <table>
+        <thead><tr><th>Obra</th><th>Cliente</th><th>Início</th><th>Previsão</th><th>Situação</th></tr></thead>
+        <tbody>
+          <tr class="sel"><td>Reforma Ap. 302</td><td>Marta Lima</td><td class="n">02/09/2026</td><td class="n">20/12/2026</td><td><span class="ok">EM ANDAMENTO</span></td></tr>
+          <tr><td>Casa Itapuã</td><td>Joaquim Reis</td><td class="n">10/08/2026</td><td class="n">30/10/2026</td><td><span class="rev">PRAZO VENCIDO</span></td></tr>
+          <tr><td>Galpão Lauro de Freitas</td><td>Construtora Brisa</td><td class="n">15/11/2026</td><td class="n">28/02/2027</td><td><span class="ok">EM ANDAMENTO</span></td></tr>
+          <tr><td>Loja Rio Vermelho</td><td>Ana Prado</td><td class="n">01/10/2026</td><td class="n">15/01/2027</td><td><span class="ok">EM ANDAMENTO</span></td></tr>
+          <tr><td>Muro Stella Maris</td><td>Paulo Sá</td><td class="n">05/01/2027</td><td class="n">10/02/2027</td><td><span class="ok">AGENDADA</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <aside class="side">
+      <div class="draw"><p>FOTOS E DOCUMENTOS · 6 ARQUIVOS</p></div>
+      <div class="carimbo">
+        <div class="c w2"><span>Obra</span><b>Reforma Ap. 302</b></div><div class="c"><span>Prancha</span><b class="m">01/01</b></div>
+        <div class="c w3"><span>Cliente · endereço</span><b>Marta Lima · R. das Hortênsias, 120, Pituba</b></div>
+        <div class="c"><span>Início</span><b class="m">02/09/2026</b></div><div class="c"><span>Previsão</span><b class="m">20/12/2026</b></div><div class="c"><span>Notas</span><b class="m">4</b></div>
+        <div class="c w2"><span>Faturado</span><b class="m">R$ 21.400,00</b></div><div class="c"><span>Rev.</span><b class="m">C</b></div>
+      </div>
+    </aside>
+  </div>
+</div>
+</body></html>

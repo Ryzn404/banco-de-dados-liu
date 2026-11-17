@@ -2,69 +2,128 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Gestão de Obras</title>
+  <meta name="description" content="Clientes, obras, notas fiscais e documentos em um só lugar." />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0f17" media="(prefers-color-scheme: dark)" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Obras" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Ícones (traço único, 24px) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-painel" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></symbol>
+      <symbol id="i-clientes" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-obras" viewBox="0 0 24 24"><path d="M2.5 17.5h19v2h-19z"/><path d="M4.5 17.5V15a7.5 7.5 0 0 1 15 0v2.5"/><path d="M10 8.2V5.5h4v2.7"/></symbol>
+      <symbol id="i-notas" viewBox="0 0 24 24"><path d="M5 3h14v18l-2.3-1.6L14.3 21 12 19.4 9.7 21l-2.4-1.6L5 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+      <symbol id="i-arquivos" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+      <symbol id="i-archive" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8M10 12h4"/></symbol>
+      <symbol id="i-unarchive" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="m9 15 3-3 3 3M12 12v6"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="m19 6-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.25"/><circle cx="12" cy="12" r="1.25"/><circle cx="19" cy="12" r="1.25"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/></symbol>
+    </defs>
+  </svg>
+
   <!-- ============ LOGIN ============ -->
-  <section id="login-view" class="login-wrap" hidden>
-    <form id="login-form" class="login-card">
-      <div class="brand"><span class="logo">▣</span> Gestão de Obras</div>
-      <p class="muted">Entre com seu usuário</p>
-      <label>Usuário<input name="usuario" autocomplete="username" required placeholder="liu" /></label>
-      <label>Senha<input name="senha" type="password" autocomplete="current-password" required /></label>
-      <button class="btn primary" type="submit">Entrar</button>
-      <p id="login-error" class="error" hidden></p>
+  <section id="login-view" class="login" hidden>
+    <form id="login-form" class="login-card" aria-labelledby="login-title">
+      <div class="brand"><span class="mark"><svg class="ic"><use href="#i-obras"/></svg></span>Gestão de Obras</div>
+      <h1 id="login-title">Entrar</h1>
+      <label class="field">Usuário<input name="usuario" autocomplete="username" autocapitalize="none" required placeholder="liu" /></label>
+      <label class="field">Senha<input name="senha" type="password" autocomplete="current-password" required /></label>
+      <p id="login-error" class="form-error" role="alert" hidden></p>
+      <button class="btn primary block" type="submit">Entrar</button>
     </form>
   </section>
 
   <!-- ============ APP ============ -->
   <div id="app-view" class="app" hidden>
-    <aside class="sidebar">
-      <div class="brand"><span class="logo">▣</span> Gestão de Obras</div>
-      <nav>
-        <button data-tab="dashboard" class="active">Painel</button>
-        <button data-tab="clientes">Clientes</button>
-        <button data-tab="obras">Obras</button>
-        <button data-tab="notas">Notas Fiscais</button>
-        <button data-tab="arquivos">Arquivos</button>
+    <aside class="sidebar" aria-label="Menu principal">
+      <div class="brand"><span class="mark"><svg class="ic"><use href="#i-obras"/></svg></span>Gestão de Obras</div>
+      <button class="search-trigger" data-busca><svg class="ic"><use href="#i-search"/></svg><span>Buscar</span><kbd>Ctrl K</kbd></button>
+      <nav class="side-nav">
+        <button data-tab="dashboard" class="active" aria-current="page"><svg class="ic"><use href="#i-painel"/></svg>Painel</button>
+        <button data-tab="clientes"><svg class="ic"><use href="#i-clientes"/></svg>Clientes<span class="count" data-count="clientes"></span></button>
+        <button data-tab="obras"><svg class="ic"><use href="#i-obras"/></svg>Obras<span class="count" data-count="obras"></span></button>
+        <button data-tab="notas"><svg class="ic"><use href="#i-notas"/></svg>Notas fiscais<span class="count" data-count="notas"></span></button>
+        <button data-tab="arquivos"><svg class="ic"><use href="#i-arquivos"/></svg>Arquivos</button>
       </nav>
-      <div class="sidebar-foot">
-        <div class="rt"><span id="rt-dot" class="dot"></span><span id="rt-label">Realtime…</span></div>
-        <div id="user-label" class="muted small"></div>
-        <button id="logout" class="btn ghost small">Sair</button>
+      <div class="side-foot">
+        <div class="rt"><span class="dot" data-rt-dot></span><span data-rt-label>Conectando…</span></div>
+        <div class="user">
+          <span class="avatar" data-avatar>L</span>
+          <span class="user-name" data-user-label></span>
+          <button class="icon-btn" data-logout aria-label="Sair" title="Sair"><svg class="ic"><use href="#i-logout"/></svg></button>
+        </div>
       </div>
     </aside>
 
-    <main>
+    <header class="mobilebar">
+      <div class="brand"><span class="mark"><svg class="ic"><use href="#i-obras"/></svg></span>Gestão de Obras</div>
+      <span class="dot" data-rt-dot title="Tempo real"></span>
+      <button class="icon-btn" data-busca aria-label="Buscar" title="Buscar"><svg class="ic"><use href="#i-search"/></svg></button>
+      <button class="icon-btn" data-logout aria-label="Sair" title="Sair"><svg class="ic"><use href="#i-logout"/></svg></button>
+    </header>
+
+    <main class="main">
       <!-- Painel -->
-      <section data-panel="dashboard">
+      <section data-panel="dashboard" aria-labelledby="h-painel">
         <header class="page-head">
-          <h1>Painel</h1>
-          <button id="refresh-dash" class="btn ghost">Atualizar</button>
+          <div><h1 id="h-painel">Painel</h1><p class="sub" id="painel-sub">Resumo das obras e do faturamento</p></div>
+          <div class="actions quick">
+            <button class="btn" data-attach><svg class="ic"><use href="#i-camera"/></svg>Foto ou documento</button>
+            <button class="btn primary" data-new="notas"><svg class="ic"><use href="#i-plus"/></svg>Nova nota fiscal</button>
+          </div>
         </header>
-        <p class="muted small">Indicadores calculados pela Edge Function <code>resumo-dashboard</code>.</p>
         <div id="kpis" class="kpis"></div>
-        <div class="card">
-          <h2>Faturamento — últimos 6 meses</h2>
-          <div id="chart" class="bars"></div>
+        <div class="painel-grid">
+          <section class="panel">
+            <header class="panel-head"><h2>Obras em andamento</h2><button class="link" data-goto="obras">Ver todas<svg class="ic"><use href="#i-chevron"/></svg></button></header>
+            <div id="painel-obras"></div>
+          </section>
+          <section class="panel">
+            <header class="panel-head"><h2>Faturamento</h2><span class="muted" id="chart-range">Últimos 6 meses</span></header>
+            <div id="chart" class="chart"></div>
+          </section>
+          <section class="panel span-2">
+            <header class="panel-head"><h2>Notas fiscais recentes</h2><button class="link" data-goto="notas">Ver todas<svg class="ic"><use href="#i-chevron"/></svg></button></header>
+            <div id="painel-notas"></div>
+          </section>
         </div>
       </section>
 
       <!-- Clientes -->
-      <section data-panel="clientes" hidden>
+      <section data-panel="clientes" aria-labelledby="h-clientes" hidden>
         <header class="page-head">
-          <h1>Clientes</h1>
-          <div class="actions">
-            <label class="check small"><input type="checkbox" id="mostrar-arquivados" /> Mostrar arquivados</label>
-            <input class="search" data-search="clientes" placeholder="Buscar…" />
-            <button class="btn primary" data-new="clientes">+ Novo cliente</button>
-          </div>
+          <div><h1 id="h-clientes">Clientes</h1><p class="sub" data-summary="clientes"></p></div>
+          <div class="actions hide-mobile"><button class="btn primary" data-new="clientes"><svg class="ic"><use href="#i-plus"/></svg>Novo cliente</button></div>
         </header>
-        <div class="card table-wrap">
-          <table>
-            <thead><tr><th>Nome</th><th>CPF/CNPJ</th><th>Telefone</th><th>Endereço</th><th></th></tr></thead>
+        <div class="toolbar">
+          <label class="search"><svg class="ic"><use href="#i-search"/></svg><input type="search" data-search="clientes" placeholder="Buscar por nome, CPF/CNPJ ou telefone" aria-label="Buscar clientes" /></label>
+          <div class="chips" data-chips="clientes" role="group" aria-label="Filtrar clientes"></div>
+        </div>
+        <div class="panel table-wrap">
+          <table class="data">
+            <thead><tr><th>Nome</th><th>CPF/CNPJ</th><th>Telefone</th><th>Endereço</th><th class="col-actions"><span class="sr-only">Ações</span></th></tr></thead>
             <tbody id="tb-clientes"></tbody>
           </table>
         </div>
@@ -72,17 +131,18 @@
       </section>
 
       <!-- Obras -->
-      <section data-panel="obras" hidden>
+      <section data-panel="obras" aria-labelledby="h-obras" hidden>
         <header class="page-head">
-          <h1>Obras</h1>
-          <div class="actions">
-            <input class="search" data-search="obras" placeholder="Buscar…" />
-            <button class="btn primary" data-new="obras">+ Nova obra</button>
-          </div>
+          <div><h1 id="h-obras">Obras</h1><p class="sub" data-summary="obras"></p></div>
+          <div class="actions hide-mobile"><button class="btn primary" data-new="obras"><svg class="ic"><use href="#i-plus"/></svg>Nova obra</button></div>
         </header>
-        <div class="card table-wrap">
-          <table>
-            <thead><tr><th>Cliente</th><th>Endereço</th><th>Início</th><th>Previsão término</th><th>Serviços</th><th>Status</th><th></th></tr></thead>
+        <div class="toolbar">
+          <label class="search"><svg class="ic"><use href="#i-search"/></svg><input type="search" data-search="obras" placeholder="Buscar por obra, cliente ou endereço" aria-label="Buscar obras" /></label>
+          <div class="chips" data-chips="obras" role="group" aria-label="Filtrar obras"></div>
+        </div>
+        <div class="panel table-wrap">
+          <table class="data">
+            <thead><tr><th>Obra</th><th>Endereço</th><th>Início</th><th>Previsão de término</th><th>Situação</th><th class="col-actions"><span class="sr-only">Ações</span></th></tr></thead>
             <tbody id="tb-obras"></tbody>
           </table>
         </div>
@@ -90,73 +150,110 @@
       </section>
 
       <!-- Notas -->
-      <section data-panel="notas" hidden>
+      <section data-panel="notas" aria-labelledby="h-notas" hidden>
         <header class="page-head">
-          <h1>Notas Fiscais</h1>
-          <div class="actions">
-            <input class="search" data-search="notas" placeholder="Buscar…" />
-            <button class="btn primary" data-new="notas">+ Nova nota</button>
-          </div>
+          <div><h1 id="h-notas">Notas fiscais</h1><p class="sub" data-summary="notas"></p></div>
+          <div class="actions hide-mobile"><button class="btn primary" data-new="notas"><svg class="ic"><use href="#i-plus"/></svg>Nova nota fiscal</button></div>
         </header>
-        <div class="card table-wrap">
-          <table>
-            <thead><tr><th>Número</th><th>Emissão</th><th>Cliente</th><th>Obra</th><th class="num">Valor total</th><th></th></tr></thead>
+        <div class="toolbar">
+          <label class="search"><svg class="ic"><use href="#i-search"/></svg><input type="search" data-search="notas" placeholder="Buscar por número, cliente ou obra" aria-label="Buscar notas fiscais" /></label>
+          <div class="chips" data-chips="notas" role="group" aria-label="Filtrar por período"></div>
+        </div>
+        <div class="panel table-wrap">
+          <table class="data">
+            <thead><tr><th>Número</th><th>Emissão</th><th>Cliente</th><th>Obra</th><th class="num">Valor total</th><th class="col-actions"><span class="sr-only">Ações</span></th></tr></thead>
             <tbody id="tb-notas"></tbody>
           </table>
         </div>
         <div class="pager" data-pager="notas" hidden></div>
       </section>
 
-      <!-- Arquivos (Storage) -->
-      <section data-panel="arquivos" hidden>
+      <!-- Arquivos -->
+      <section data-panel="arquivos" aria-labelledby="h-arquivos" hidden>
         <header class="page-head">
-          <h1>Arquivos</h1>
-          <label class="btn primary" id="explorer-upload-label">+ Enviar arquivo
-            <input type="file" id="explorer-upload" multiple hidden />
-          </label>
+          <div><h1 id="h-arquivos">Arquivos</h1><p class="sub">Fotos e documentos organizados por cliente, obra e nota fiscal</p></div>
+          <div class="actions hide-mobile">
+            <label class="btn primary" id="explorer-upload-label"><svg class="ic"><use href="#i-upload"/></svg>Enviar arquivo<input type="file" id="explorer-upload" multiple hidden /></label>
+          </div>
         </header>
-        <p class="muted small">Bucket <code>documentos</code>, organizado em pastas: <code>clientes/</code>, <code>obras/</code>, <code>notas-fiscais/</code> e <code>geral/</code>.</p>
-        <nav id="crumbs" class="crumbs"></nav>
-        <div class="card"><ul id="explorer" class="file-list"></ul></div>
+        <nav id="crumbs" class="crumbs" aria-label="Pasta atual"></nav>
+        <div class="panel"><ul id="explorer" class="file-list"></ul></div>
+        <section class="panel" id="recentes-panel" hidden>
+          <header class="panel-head"><h2>Enviados recentemente</h2></header>
+          <div id="recentes"></div>
+        </section>
       </section>
     </main>
+
+    <!-- Ação principal no celular -->
+    <button class="fab" id="fab" hidden><svg class="ic"><use href="#i-plus"/></svg><span id="fab-label"></span></button>
+
+    <nav class="tabbar" aria-label="Seções">
+      <button data-tab="dashboard" class="active" aria-current="page"><svg class="ic"><use href="#i-painel"/></svg>Painel</button>
+      <button data-tab="clientes"><svg class="ic"><use href="#i-clientes"/></svg>Clientes</button>
+      <button data-tab="obras"><svg class="ic"><use href="#i-obras"/></svg>Obras</button>
+      <button data-tab="notas"><svg class="ic"><use href="#i-notas"/></svg>Notas</button>
+      <button data-tab="arquivos"><svg class="ic"><use href="#i-arquivos"/></svg>Arquivos</button>
+    </nav>
   </div>
 
-  <!-- ============ MODAIS ============ -->
-  <dialog id="form-dialog">
-    <form id="entity-form" method="dialog">
-      <h2 id="form-title"></h2>
+  <!-- ============ DIÁLOGOS ============ -->
+  <dialog id="form-dialog" aria-labelledby="form-title">
+    <form id="entity-form" method="dialog" class="sheet">
+      <header class="sheet-head"><h2 id="form-title"></h2><button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button></header>
       <div id="form-fields" class="fields"></div>
-      <p id="form-error" class="error" hidden></p>
-      <footer>
-        <button type="button" class="btn ghost" data-close>Cancelar</button>
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+      <footer class="sheet-foot">
+        <button type="button" class="btn" data-close>Cancelar</button>
         <button type="submit" class="btn primary" id="form-submit">Salvar</button>
       </footer>
     </form>
   </dialog>
 
-  <dialog id="files-dialog">
-    <div class="files-box">
-      <h2 id="files-title">Arquivos</h2>
-      <p class="muted small">Pasta: <code id="files-path"></code></p>
-      <label class="btn primary small">+ Enviar arquivo<input type="file" id="files-upload" multiple hidden /></label>
+  <dialog id="files-dialog" aria-labelledby="files-title">
+    <div class="sheet">
+      <header class="sheet-head"><div><h2 id="files-title">Arquivos</h2><p class="muted small" id="files-path"></p></div><button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button></header>
+      <div class="upload-row">
+        <label class="btn"><svg class="ic"><use href="#i-camera"/></svg>Tirar foto<input type="file" id="files-camera" accept="image/*" capture="environment" hidden /></label>
+        <label class="btn primary"><svg class="ic"><use href="#i-upload"/></svg>Enviar arquivo<input type="file" id="files-upload" multiple hidden /></label>
+      </div>
       <ul id="files-list" class="file-list"></ul>
-      <footer><button type="button" class="btn ghost" data-close>Fechar</button></footer>
     </div>
   </dialog>
 
-  <dialog id="confirm-dialog">
-    <div class="files-box">
+  <dialog id="pick-dialog" aria-labelledby="pick-title">
+    <div class="sheet">
+      <header class="sheet-head"><div><h2 id="pick-title">Anexar a qual obra?</h2><p class="muted small">A foto ou o documento fica na pasta da obra.</p></div><button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button></header>
+      <ul id="pick-list" class="pick-list"></ul>
+    </div>
+  </dialog>
+
+  <dialog id="busca-dialog" class="busca" aria-label="Buscar">
+    <div class="busca-box">
+      <label class="busca-input"><svg class="ic"><use href="#i-search"/></svg><input id="busca-input" type="search" placeholder="Buscar cliente, obra ou nota fiscal" aria-label="Buscar cliente, obra ou nota fiscal" autocomplete="off" /><button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button></label>
+      <div id="busca-res" class="busca-res"></div>
+    </div>
+  </dialog>
+
+  <dialog id="acoes-dialog" aria-labelledby="acoes-title">
+    <div class="sheet small">
+      <header class="sheet-head"><div><h2 id="acoes-title">Mais ações</h2><p class="muted small" id="acoes-sub"></p></div><button type="button" class="icon-btn" data-close aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button></header>
+      <div id="acoes-list" class="acoes-list"></div>
+    </div>
+  </dialog>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <div class="sheet small">
       <h2 id="confirm-title">Confirmar</h2>
       <p id="confirm-text"></p>
-      <footer>
-        <button type="button" class="btn ghost" id="confirm-no">Cancelar</button>
+      <footer class="sheet-foot">
+        <button type="button" class="btn" id="confirm-no">Cancelar</button>
         <button type="button" class="btn danger" id="confirm-yes">Excluir</button>
       </footer>
     </div>
   </dialog>
 
-  <div id="toasts" class="toasts"></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
 
   <script type="module" src="app.js"></script>
 </body>

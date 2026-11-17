@@ -1,3 +1,5 @@
 .env
 __pycache__/
 .env.example
+# capturas de revisão com dados reais de clientes
+.impeccable/review/

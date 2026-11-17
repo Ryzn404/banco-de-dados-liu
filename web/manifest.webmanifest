@@ -1,0 +1,21 @@
+{
+  "name": "Gestão de Obras",
+  "short_name": "Obras",
+  "description": "Clientes, obras, notas fiscais e documentos em um só lugar.",
+  "lang": "pt-BR",
+  "start_url": "./#painel",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Notas fiscais", "url": "./#notas" },
+    { "name": "Obras", "url": "./#obras" },
+    { "name": "Clientes", "url": "./#clientes" }
+  ]
+}

@@ -47,4 +47,5 @@ export function today(timeZone = TIMEZONE, agora = new Date()) {
 }
 
 export const fmtDate = (d) => (d ? d.split("-").reverse().join("/") : "—");
-export const fmtBRL = (n) => Number(n || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+// Mesmo formato do campo de valor: R$1.900,00 (sem espaço depois do R$)
+export const fmtBRL = (n) => Number(n || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }).replace(/\s/u, "");

@@ -26,3 +26,11 @@ python scripts/smoke_test.py    # teste ponta a ponta (cria e apaga registros de
 
 As migrações aplicadas ficam registradas em `app_internal.migracoes`; o setup só roda as novas.
 Segredos ficam no `.env` (não versionado). O front usa apenas a chave publicável (`web/config.js`).
+
+## Interface
+
+- Painel administrativo com menu lateral, busca geral (`Ctrl K`) e tema claro/escuro automático. Sistema de design em `DESIGN.md`.
+- No celular (até 860px): barra inferior com as 5 seções, botão flutuante de cadastro, listas em cartões com **Ligar**, **Arquivos**, **Editar** e **Mais**, e formulários que sobem de baixo.
+- App instalável (PWA): `web/manifest.webmanifest`, `web/sw.js` e ícones em `web/icons/` (gerados por `python scripts/gerar_icones.py`).
+
+Para abrir no celular na mesma rede Wi-Fi: `python serve.py --rede` (mostra o endereço). Para instalar na tela inicial do celular, o site precisa estar publicado com HTTPS.

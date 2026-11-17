@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "web/index.html"
+        ],
+        "createdAt": "2026-11-15T15:53:17.272Z",
+        "reason": "assistant triage: tables pad their own cells (16px) and dialogs pad the inner .sheet; detector only sees the direct child flush"
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-15T15:54:55.652Z",
+        "reason": "assistant triage: unchosen decision-round sketch, kept as the spent hand, never shipped"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-15T15:54:55.822Z",
+        "reason": "assistant triage: unchosen decision-round sketch, kept as the spent hand, never shipped"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-15T15:54:56.010Z",
+        "reason": "assistant triage: unchosen decision-round sketch, kept as the spent hand, never shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-17T22:03:44.660Z",
+        "reason": "assistant triage: unchosen decision-round sketch, kept as the spent hand, never shipped; its fonts belong to the rejected direction"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-17T22:03:44.860Z",
+        "reason": "assistant triage: unchosen decision-round sketch, kept as the spent hand, never shipped; its fonts belong to the rejected direction"
+      }
+    ]
+  }
+}

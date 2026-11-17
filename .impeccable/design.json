@@ -1,0 +1,1211 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T13:00:00-03:00",
+  "title": "Design System: Gestão de Obras",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Cinza-Azulado de Fundo",
+        "canonical": "#f5f7fa",
+        "dark": "#0b0f17",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#e4e7ec",
+          "#f5f7fa"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Superfície Branca",
+        "canonical": "#ffffff",
+        "dark": "#121826",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#667085",
+          "#d0d5dd",
+          "#eaecf0",
+          "#f9fafb",
+          "#ffffff"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Superfície Recuada",
+        "canonical": "#fafbfc",
+        "dark": "#0f1520",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#667085",
+          "#d0d5dd",
+          "#eaecf0",
+          "#f5f7fa",
+          "#fafbfc"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Hover de Superfície",
+        "canonical": "#f5f7fa",
+        "dark": "#182032",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#e4e7ec",
+          "#f5f7fa"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Borda",
+        "canonical": "#e4e7ec",
+        "dark": "#232b3a",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#e4e7ec"
+        ]
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Borda Firme",
+        "canonical": "#d0d5dd",
+        "dark": "#344054",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#eaecf0"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#111827",
+        "dark": "#e6e9ef",
+        "tonalRamp": [
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#d1d5db",
+          "#f3f4f6"
+        ]
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Tinta Secundária",
+        "canonical": "#475467",
+        "dark": "#b4bcc8",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "text-3": {
+        "role": "neutral",
+        "displayName": "Tinta Terciária",
+        "canonical": "#667085",
+        "dark": "#8d97a8",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Azul de Ação",
+        "canonical": "#2563eb",
+        "dark": "#2563eb",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Azul de Ação Profundo",
+        "canonical": "#1d4ed8",
+        "dark": "#1d4ed8",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "accent-text": {
+        "role": "primary",
+        "displayName": "Texto Azul",
+        "canonical": "#1d4ed8",
+        "dark": "#84adff",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Azul Suave",
+        "canonical": "#eff4ff",
+        "dark": "rgba(37, 99, 235, .16)",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "accent-soft-2": {
+        "role": "primary",
+        "displayName": "Azul Bruma",
+        "canonical": "#c7d7fe",
+        "dark": "rgba(132, 173, 255, .35)",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "Branco sobre Azul",
+        "canonical": "#ffffff",
+        "dark": "#ffffff",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#667085",
+          "#d0d5dd",
+          "#eaecf0",
+          "#f9fafb",
+          "#ffffff"
+        ]
+      },
+      "ok": {
+        "role": "status",
+        "displayName": "Em Andamento (texto)",
+        "canonical": "#067647",
+        "dark": "#47cd89",
+        "tonalRamp": [
+          "#074d31",
+          "#067647",
+          "#079455",
+          "#17b26a",
+          "#47cd89",
+          "#75e0a7",
+          "#dcfae6",
+          "#ecfdf3"
+        ]
+      },
+      "ok-bg": {
+        "role": "status",
+        "displayName": "Em Andamento (fundo)",
+        "canonical": "#ecfdf3",
+        "dark": "rgba(23, 178, 106, .14)",
+        "tonalRamp": [
+          "#074d31",
+          "#067647",
+          "#079455",
+          "#17b26a",
+          "#47cd89",
+          "#75e0a7",
+          "#dcfae6",
+          "#ecfdf3"
+        ]
+      },
+      "ok-dot": {
+        "role": "status",
+        "displayName": "Em Andamento (ponto)",
+        "canonical": "#17b26a",
+        "dark": "#47cd89",
+        "tonalRamp": [
+          "#074d31",
+          "#067647",
+          "#079455",
+          "#17b26a",
+          "#47cd89",
+          "#75e0a7",
+          "#dcfae6",
+          "#ecfdf3"
+        ]
+      },
+      "bad": {
+        "role": "status",
+        "displayName": "Prazo Vencido (texto)",
+        "canonical": "#b42318",
+        "dark": "#f97066",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "bad-bg": {
+        "role": "status",
+        "displayName": "Prazo Vencido (fundo)",
+        "canonical": "#fef3f2",
+        "dark": "rgba(240, 68, 56, .14)",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "bad-dot": {
+        "role": "status",
+        "displayName": "Prazo Vencido (ponto)",
+        "canonical": "#f04438",
+        "dark": "#f97066",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "info": {
+        "role": "status",
+        "displayName": "Agendada (texto)",
+        "canonical": "#175cd3",
+        "dark": "#84caff",
+        "tonalRamp": [
+          "#194185",
+          "#175cd3",
+          "#1570ef",
+          "#2e90fa",
+          "#53b1fd",
+          "#84caff",
+          "#d1e9ff",
+          "#eff8ff"
+        ]
+      },
+      "info-bg": {
+        "role": "status",
+        "displayName": "Agendada (fundo)",
+        "canonical": "#eff8ff",
+        "dark": "rgba(46, 144, 250, .14)",
+        "tonalRamp": [
+          "#194185",
+          "#175cd3",
+          "#1570ef",
+          "#2e90fa",
+          "#53b1fd",
+          "#84caff",
+          "#d1e9ff",
+          "#eff8ff"
+        ]
+      },
+      "info-dot": {
+        "role": "status",
+        "displayName": "Agendada (ponto)",
+        "canonical": "#2e90fa",
+        "dark": "#53b1fd",
+        "tonalRamp": [
+          "#194185",
+          "#175cd3",
+          "#1570ef",
+          "#2e90fa",
+          "#53b1fd",
+          "#84caff",
+          "#d1e9ff",
+          "#eff8ff"
+        ]
+      },
+      "mute": {
+        "role": "status",
+        "displayName": "Arquivado (texto)",
+        "canonical": "#475467",
+        "dark": "#98a2b3",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "mute-bg": {
+        "role": "status",
+        "displayName": "Arquivado (fundo)",
+        "canonical": "#f2f4f7",
+        "dark": "rgba(152, 162, 179, .12)",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "mute-dot": {
+        "role": "status",
+        "displayName": "Arquivado (ponto)",
+        "canonical": "#98a2b3",
+        "dark": "#667085",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Destrutivo",
+        "canonical": "#d92d20",
+        "dark": "#d92d20",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "on-danger": {
+        "role": "neutral",
+        "displayName": "Branco sobre Destrutivo",
+        "canonical": "#ffffff",
+        "dark": "#ffffff",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#667085",
+          "#d0d5dd",
+          "#eaecf0",
+          "#f9fafb",
+          "#ffffff"
+        ]
+      },
+      "inverse": {
+        "role": "neutral",
+        "displayName": "Inverso",
+        "canonical": "#111827",
+        "dark": "#e6e9ef",
+        "tonalRamp": [
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#d1d5db",
+          "#f3f4f6"
+        ]
+      },
+      "on-inverse": {
+        "role": "neutral",
+        "displayName": "Sobre Inverso",
+        "canonical": "#f9fafb",
+        "dark": "#0b0f17",
+        "tonalRamp": [
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#d1d5db",
+          "#f9fafb"
+        ]
+      },
+      "bg-dark": {
+        "role": "neutral",
+        "displayName": "Cinza-Azulado de Fundo (escuro)",
+        "canonical": "#0b0f17",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#e4e7ec",
+          "#f5f7fa"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Superfície Branca (escuro)",
+        "canonical": "#121826",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#667085",
+          "#d0d5dd",
+          "#eaecf0",
+          "#f9fafb",
+          "#ffffff"
+        ]
+      },
+      "surface-2-dark": {
+        "role": "neutral",
+        "displayName": "Superfície Recuada (escuro)",
+        "canonical": "#0f1520",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#667085",
+          "#d0d5dd",
+          "#eaecf0",
+          "#f5f7fa",
+          "#fafbfc"
+        ]
+      },
+      "surface-hover-dark": {
+        "role": "neutral",
+        "displayName": "Hover de Superfície (escuro)",
+        "canonical": "#182032",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#e4e7ec",
+          "#f5f7fa"
+        ]
+      },
+      "border-dark": {
+        "role": "neutral",
+        "displayName": "Borda (escuro)",
+        "canonical": "#232b3a",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#e4e7ec"
+        ]
+      },
+      "border-strong-dark": {
+        "role": "neutral",
+        "displayName": "Borda Firme (escuro)",
+        "canonical": "#344054",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#eaecf0"
+        ]
+      },
+      "text-dark": {
+        "role": "neutral",
+        "displayName": "Tinta (escuro)",
+        "canonical": "#e6e9ef",
+        "tonalRamp": [
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#d1d5db",
+          "#f3f4f6"
+        ]
+      },
+      "text-2-dark": {
+        "role": "neutral",
+        "displayName": "Tinta Secundária (escuro)",
+        "canonical": "#b4bcc8",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "text-3-dark": {
+        "role": "neutral",
+        "displayName": "Tinta Terciária (escuro)",
+        "canonical": "#8d97a8",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "accent-text-dark": {
+        "role": "primary",
+        "displayName": "Texto Azul (escuro)",
+        "canonical": "#84adff",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "accent-soft-dark": {
+        "role": "primary",
+        "displayName": "Azul Suave (escuro)",
+        "canonical": "rgba(37, 99, 235, .16)",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "accent-soft-2-dark": {
+        "role": "primary",
+        "displayName": "Azul Bruma (escuro)",
+        "canonical": "rgba(132, 173, 255, .35)",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#84adff",
+          "#c7d7fe",
+          "#eff4ff"
+        ]
+      },
+      "ok-dark": {
+        "role": "status",
+        "displayName": "Em Andamento (texto) (escuro)",
+        "canonical": "#47cd89",
+        "tonalRamp": [
+          "#074d31",
+          "#067647",
+          "#079455",
+          "#17b26a",
+          "#47cd89",
+          "#75e0a7",
+          "#dcfae6",
+          "#ecfdf3"
+        ]
+      },
+      "ok-bg-dark": {
+        "role": "status",
+        "displayName": "Em Andamento (fundo) (escuro)",
+        "canonical": "rgba(23, 178, 106, .14)",
+        "tonalRamp": [
+          "#074d31",
+          "#067647",
+          "#079455",
+          "#17b26a",
+          "#47cd89",
+          "#75e0a7",
+          "#dcfae6",
+          "#ecfdf3"
+        ]
+      },
+      "ok-dot-dark": {
+        "role": "status",
+        "displayName": "Em Andamento (ponto) (escuro)",
+        "canonical": "#47cd89",
+        "tonalRamp": [
+          "#074d31",
+          "#067647",
+          "#079455",
+          "#17b26a",
+          "#47cd89",
+          "#75e0a7",
+          "#dcfae6",
+          "#ecfdf3"
+        ]
+      },
+      "bad-dark": {
+        "role": "status",
+        "displayName": "Prazo Vencido (texto) (escuro)",
+        "canonical": "#f97066",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "bad-bg-dark": {
+        "role": "status",
+        "displayName": "Prazo Vencido (fundo) (escuro)",
+        "canonical": "rgba(240, 68, 56, .14)",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "bad-dot-dark": {
+        "role": "status",
+        "displayName": "Prazo Vencido (ponto) (escuro)",
+        "canonical": "#f97066",
+        "tonalRamp": [
+          "#7a271a",
+          "#b42318",
+          "#d92d20",
+          "#f04438",
+          "#f97066",
+          "#fda29b",
+          "#fee4e2",
+          "#fef3f2"
+        ]
+      },
+      "info-dark": {
+        "role": "status",
+        "displayName": "Agendada (texto) (escuro)",
+        "canonical": "#84caff",
+        "tonalRamp": [
+          "#194185",
+          "#175cd3",
+          "#1570ef",
+          "#2e90fa",
+          "#53b1fd",
+          "#84caff",
+          "#d1e9ff",
+          "#eff8ff"
+        ]
+      },
+      "info-bg-dark": {
+        "role": "status",
+        "displayName": "Agendada (fundo) (escuro)",
+        "canonical": "rgba(46, 144, 250, .14)",
+        "tonalRamp": [
+          "#194185",
+          "#175cd3",
+          "#1570ef",
+          "#2e90fa",
+          "#53b1fd",
+          "#84caff",
+          "#d1e9ff",
+          "#eff8ff"
+        ]
+      },
+      "info-dot-dark": {
+        "role": "status",
+        "displayName": "Agendada (ponto) (escuro)",
+        "canonical": "#53b1fd",
+        "tonalRamp": [
+          "#194185",
+          "#175cd3",
+          "#1570ef",
+          "#2e90fa",
+          "#53b1fd",
+          "#84caff",
+          "#d1e9ff",
+          "#eff8ff"
+        ]
+      },
+      "mute-dark": {
+        "role": "status",
+        "displayName": "Arquivado (texto) (escuro)",
+        "canonical": "#98a2b3",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "mute-bg-dark": {
+        "role": "status",
+        "displayName": "Arquivado (fundo) (escuro)",
+        "canonical": "rgba(152, 162, 179, .12)",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "mute-dot-dark": {
+        "role": "status",
+        "displayName": "Arquivado (ponto) (escuro)",
+        "canonical": "#667085",
+        "tonalRamp": [
+          "#101828",
+          "#182230",
+          "#344054",
+          "#475467",
+          "#667085",
+          "#98a2b3",
+          "#d0d5dd",
+          "#f2f4f7"
+        ]
+      },
+      "inverse-dark": {
+        "role": "neutral",
+        "displayName": "Inverso (escuro)",
+        "canonical": "#e6e9ef",
+        "tonalRamp": [
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#d1d5db",
+          "#f3f4f6"
+        ]
+      },
+      "on-inverse-dark": {
+        "role": "neutral",
+        "displayName": "Sobre Inverso (escuro)",
+        "canonical": "#0b0f17",
+        "tonalRamp": [
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#d1d5db",
+          "#f9fafb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Valor dos indicadores do painel; 1.5rem no celular."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título da seção (h1); 1.6rem no celular."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Título de painel e de diálogo (h2)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrente e células; base 14px no computador, 15px no celular."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Metadados, subtítulos de célula, cabeçalho de tabela, contagens."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Selo de estado, valores do gráfico, grupo da busca, kbd."
+      },
+      "display-compact": {
+        "displayName": "Display compacto",
+        "purpose": "Valor dos indicadores no celular e título do login."
+      },
+      "headline-mobile": {
+        "displayName": "Headline móvel",
+        "purpose": "h1 abaixo de 860px."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Marca (650), título do estado vazio e campo da busca geral (400)."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Rótulo de campo, caixa de seleção, chip, ação de linha, migalhas."
+      },
+      "input-mobile": {
+        "displayName": "Campo móvel",
+        "purpose": "Campos de texto abaixo de 860px; 16px evita o zoom do navegador."
+      },
+      "quick-action-mobile": {
+        "displayName": "Ação rápida móvel",
+        "purpose": "Ações rápidas do painel no celular (14px sobre base 15px)."
+      },
+      "action-label-mobile": {
+        "displayName": "Rótulo de ação móvel",
+        "purpose": "Rótulos de Ligar/Arquivos/Editar/Mais no cartão (12px sobre base 15px)."
+      },
+      "tab-label-mobile": {
+        "displayName": "Rótulo da barra inferior",
+        "purpose": "Rótulos da barra inferior (11px sobre base 15px)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-sm",
+        "value": "0 1px 2px rgba(16, 24, 40, .05)",
+        "dark": "0 1px 2px rgba(0, 0, 0, .4)",
+        "purpose": "Repouso: cartões, painéis, botões, campos."
+      },
+      {
+        "name": "shadow-md",
+        "value": "0 4px 8px -2px rgba(16, 24, 40, .08), 0 2px 4px -2px rgba(16, 24, 40, .04)",
+        "dark": "0 4px 10px -2px rgba(0, 0, 0, .5)",
+        "purpose": "Cartão de login e hover de arquivos recentes."
+      },
+      {
+        "name": "shadow-lg",
+        "value": "0 20px 24px -4px rgba(16, 24, 40, .10), 0 8px 8px -4px rgba(16, 24, 40, .04)",
+        "dark": "0 24px 32px -8px rgba(0, 0, 0, .6)",
+        "purpose": "Diálogos e avisos."
+      },
+      {
+        "name": "shadow-fab",
+        "value": "0 8px 16px -4px rgba(16, 24, 40, .28)",
+        "dark": "0 8px 16px -4px rgba(16, 24, 40, .28)",
+        "purpose": "Só o botão flutuante do celular, sempre somada a shadow-md (var(--shadow-fab), var(--shadow-md)). Definida só no tema claro; o escuro herda o mesmo valor."
+      },
+      {
+        "name": "focus-ring-field",
+        "value": "0 0 0 3px var(--accent-soft-2)",
+        "purpose": "Anel de foco de campos e busca, com borda azul."
+      },
+      {
+        "name": "focus-outline",
+        "value": "2px solid var(--accent); outline-offset: 2px",
+        "purpose": "Foco por teclado em todo elemento interativo."
+      },
+      {
+        "name": "scrim",
+        "value": "rgba(16, 24, 40, .45)",
+        "dark": "rgba(0, 0, 0, .6)",
+        "purpose": "Fundo atrás de diálogos."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.2, .8, .2, 1)",
+        "purpose": "Curva padrão de entrada de diálogos, avisos, barras do gráfico e destaque de linha."
+      },
+      {
+        "name": "state-transition",
+        "value": "150ms",
+        "purpose": "Cor, borda e sombra em hover e foco."
+      },
+      {
+        "name": "rise",
+        "value": "200ms; from opacity 0, translateY(8px) scale(.985)",
+        "purpose": "Entrada de diálogo e aviso no computador."
+      },
+      {
+        "name": "sheet",
+        "value": "240ms; from translateY(24px) opacity .6",
+        "purpose": "Entrada da folha inferior no celular."
+      },
+      {
+        "name": "flash",
+        "value": "1.8s; accent-soft para transparente",
+        "purpose": "Linha recém-salva."
+      },
+      {
+        "name": "bar-grow",
+        "value": "400ms height",
+        "purpose": "Crescimento das barras do gráfico."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "durations .01ms",
+        "purpose": "prefers-reduced-motion: reduce desliga animações e transições."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1180px",
+        "purpose": "Indicadores em 2 colunas, grade do painel em 1."
+      },
+      {
+        "name": "mobile",
+        "value": "860px",
+        "purpose": "Barra inferior, botão flutuante, tabelas em cartões, diálogos em folhas, base 15px."
+      },
+      {
+        "name": "narrow",
+        "value": "340px",
+        "purpose": "Botão flutuante só com ícone."
+      }
+    ],
+    "layout": {
+      "sidebar": "240px",
+      "tabbar": "64px",
+      "mobilebar": "56px",
+      "mainMaxWidth": "1400px",
+      "mainPadding": "28px 32px 48px",
+      "mainPaddingMobile": "18px 16px 100px"
+    },
+    "rootFontSize": [
+      {
+        "name": "desktop",
+        "value": "14px"
+      },
+      {
+        "name": "mobile",
+        "value": "15px",
+        "when": "max-width: 860px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal da tela, um por cabeçalho.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M12 5v14M5 12h14\"/></svg>Nova nota fiscal</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 14px; border: 1px solid var(--border-strong, #d0d5dd); border-radius: 8px; background: var(--surface, #fff); color: var(--text, #111827); font: 600 14px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; white-space: nowrap; box-shadow: 0 1px 2px rgba(16, 24, 40, .05); cursor: pointer; transition: background-color .15s, border-color .15s, box-shadow .15s; } .ds-btn:active { box-shadow: none; } .ds-btn:focus-visible { outline: 2px solid var(--accent, #2563eb); outline-offset: 2px; } .ds-btn-primary { background: var(--accent, #2563eb); border-color: var(--accent, #2563eb); color: var(--on-accent, #fff); } .ds-btn-primary:hover { background: var(--accent-hover, #1d4ed8); border-color: var(--accent-hover, #1d4ed8); } .ds-ic { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Botão secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ações de apoio ao lado do principal.",
+      "html": "<button class=\"ds-btn2\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z\"/><circle cx=\"12\" cy=\"13\" r=\"3.5\"/></svg>Foto ou documento</button>",
+      "css": ".ds-btn2 { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border: 1px solid var(--border-strong, #d0d5dd); border-radius: 8px; background: var(--surface, #fff); color: var(--text, #111827); font: 600 14px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; box-shadow: 0 1px 2px rgba(16, 24, 40, .05); cursor: pointer; transition: background-color .15s, box-shadow .15s; } .ds-btn2:hover { background: var(--surface-hover, #f5f7fa); } .ds-btn2:active { box-shadow: none; } .ds-btn2:focus-visible { outline: 2px solid var(--accent, #2563eb); outline-offset: 2px; } .ds-ic { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Campo",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo com rótulo acima e máscara brasileira.",
+      "html": "<label class=\"ds-field\">Valor total<input placeholder=\"R$0,00\" value=\"R$1.900,00\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; font: 500 13px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--text-2, #475467); width: 260px; } .ds-field input { height: 38px; padding: 0 12px; border: 1px solid var(--border-strong, #d0d5dd); border-radius: 8px; background: var(--surface, #fff); color: var(--text, #111827); font: 400 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-variant-numeric: tabular-nums; box-shadow: 0 1px 2px rgba(16, 24, 40, .05); transition: border-color .15s, box-shadow .15s; } .ds-field input::placeholder { color: var(--text-3, #667085); } .ds-field input:focus { outline: none; border-color: var(--accent, #2563eb); box-shadow: 0 0 0 3px var(--accent-soft-2, #c7d7fe); }"
+    },
+    {
+      "name": "Chips de filtro",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Filtro por estado com contagem; selecionado em azul suave.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">Todas <span class=\"ds-n\">12</span></button><button class=\"ds-chip\" aria-pressed=\"false\">Em andamento <span class=\"ds-n\">5</span></button><button class=\"ds-chip\" aria-pressed=\"false\">Prazo vencido <span class=\"ds-n\">1</span></button></div>",
+      "css": ".ds-chips { display: flex; gap: 6px; flex-wrap: wrap; } .ds-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 1px solid var(--border, #e4e7ec); border-radius: 999px; background: var(--surface, #fff); color: var(--text-2, #475467); font: 500 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; cursor: pointer; transition: background-color .15s, border-color .15s, color .15s; } .ds-chip:hover { border-color: var(--border-strong, #d0d5dd); color: var(--text, #111827); } .ds-chip:focus-visible { outline: 2px solid var(--accent, #2563eb); outline-offset: 2px; } .ds-chip[aria-pressed=\"true\"] { background: var(--accent-soft, #eff4ff); border-color: var(--accent-soft-2, #c7d7fe); color: var(--accent-text, #1d4ed8); font-weight: 600; } .ds-n { font-size: 11px; opacity: .8; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Selos de estado",
+      "kind": "chip",
+      "refersTo": "badge-ok",
+      "description": "Estado da obra com ponto colorido e rótulo.",
+      "html": "<div style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"ds-badge ds-ok\">Em andamento</span><span class=\"ds-badge ds-bad\">Prazo vencido</span><span class=\"ds-badge ds-info\">Agendada</span><span class=\"ds-badge\">Arquivado</span></div>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; font: 600 11px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; white-space: nowrap; background: var(--mute-bg, #f2f4f7); color: var(--mute, #475467); } .ds-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--mute-dot, #98a2b3); } .ds-ok { background: var(--ok-bg, #ecfdf3); color: var(--ok, #067647); } .ds-ok::before { background: var(--ok-dot, #17b26a); } .ds-bad { background: var(--bad-bg, #fef3f2); color: var(--bad, #b42318); } .ds-bad::before { background: var(--bad-dot, #f04438); } .ds-info { background: var(--info-bg, #eff8ff); color: var(--info, #175cd3); } .ds-info::before { background: var(--info-dot, #2e90fa); }"
+    },
+    {
+      "name": "Menu lateral",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Itens com ícone de traço e contagem tabular; ativo em azul suave.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-active\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1.5\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1.5\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1.5\"/></svg>Painel</button><button><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M2.5 17.5h19v2h-19z\"/><path d=\"M4.5 17.5V15a7.5 7.5 0 0 1 15 0v2.5\"/><path d=\"M10 8.2V5.5h4v2.7\"/></svg>Obras<span class=\"ds-count\">2</span></button><button><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M5 3h14v18l-2.3-1.6L14.3 21 12 19.4 9.7 21l-2.4-1.6L5 21z\"/><path d=\"M9 8h6M9 12h6M9 16h3\"/></svg>Notas fiscais<span class=\"ds-count\">2</span></button></nav>",
+      "css": ".ds-nav { display: flex; flex-direction: column; gap: 2px; width: 216px; padding: 12px; background: var(--surface-2, #fafbfc); } .ds-nav button { display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: var(--text-2, #475467); font: 500 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; text-align: left; cursor: pointer; transition: background-color .15s, color .15s; } .ds-nav button:hover { background: var(--surface-hover, #f5f7fa); color: var(--text, #111827); } .ds-nav button:focus-visible { outline: 2px solid var(--accent, #2563eb); outline-offset: 2px; } .ds-nav button.ds-active { background: var(--accent-soft, #eff4ff); color: var(--accent-text, #1d4ed8); font-weight: 600; } .ds-count { margin-left: auto; font-size: 12px; color: var(--text-3, #667085); font-variant-numeric: tabular-nums; } .ds-ic { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Indicador",
+      "kind": "card",
+      "refersTo": "kpi-card",
+      "description": "Cartão de indicador do painel com valor tabular e rodapé de estado.",
+      "html": "<div class=\"ds-kpi\"><span class=\"ds-label\">Faturado em novembro</span><span class=\"ds-value\">R$6.000,00</span><span class=\"ds-foot\">R$1.902,00 em outubro</span></div>",
+      "css": ".ds-kpi { display: flex; flex-direction: column; gap: 6px; width: 240px; padding: 18px 20px; background: var(--surface, #fff); border: 1px solid var(--border, #e4e7ec); border-radius: 12px; box-shadow: 0 1px 2px rgba(16, 24, 40, .05); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; } .ds-label { color: var(--text-2, #475467); font-weight: 500; font-size: 14px; } .ds-value { font-size: 26px; font-weight: 650; letter-spacing: -.02em; line-height: 1.2; font-variant-numeric: tabular-nums; color: var(--text, #111827); } .ds-foot { font-size: 12px; color: var(--text-3, #667085); }"
+    },
+    {
+      "name": "Barra inferior (celular)",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Cinco seções fixas no rodapé, abaixo de 860px.",
+      "html": "<nav class=\"ds-tabbar\"><button class=\"ds-on\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1.5\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1.5\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1.5\"/></svg>Painel</button><button><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/></svg>Clientes</button><button><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M2.5 17.5h19v2h-19z\"/><path d=\"M4.5 17.5V15a7.5 7.5 0 0 1 15 0v2.5\"/></svg>Obras</button><button><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M5 3h14v18l-2.3-1.6L14.3 21 12 19.4 9.7 21l-2.4-1.6L5 21z\"/></svg>Notas</button><button><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>Arquivos</button></nav>",
+      "css": ".ds-tabbar { display: grid; grid-template-columns: repeat(5, 1fr); width: 375px; height: 64px; background: var(--surface, #fff); border-top: 1px solid var(--border, #e4e7ec); } .ds-tabbar button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border: 0; background: none; color: var(--text-3, #667085); font: 600 11px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; cursor: pointer; } .ds-tabbar button:active { background: var(--surface-hover, #f5f7fa); } .ds-tabbar button:focus-visible { outline: 2px solid var(--accent, #2563eb); outline-offset: -2px; } .ds-tabbar button.ds-on { color: var(--accent-text, #1d4ed8); } .ds-tabbar button.ds-on .ds-ic { stroke-width: 2.1; } .ds-ic { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Botão flutuante (celular)",
+      "kind": "button",
+      "refersTo": "fab",
+      "description": "Ação principal da seção com rótulo, acima da barra inferior.",
+      "html": "<button class=\"ds-fab\"><svg class=\"ds-ic\" viewBox=\"0 0 24 24\"><path d=\"M12 5v14M5 12h14\"/></svg><span>Nova obra</span></button>",
+      "css": ".ds-fab { display: inline-flex; align-items: center; gap: 8px; height: 52px; padding: 0 20px 0 16px; border: 0; border-radius: 16px; background: var(--accent, #2563eb); color: var(--on-accent, #fff); font: 650 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; box-shadow: var(--shadow-fab, 0 8px 16px -4px rgba(16, 24, 40, .28)), var(--shadow-md, 0 4px 8px -2px rgba(16, 24, 40, .08), 0 2px 4px -2px rgba(16, 24, 40, .04)); cursor: pointer; } .ds-fab:active { filter: brightness(.9); } .ds-fab:focus-visible { outline: 2px solid var(--accent, #2563eb); outline-offset: 2px; } .ds-ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Painel Exato",
+    "overview": "O padrão da categoria executado no nível do Stripe Dashboard: menu lateral, indicadores, tabelas e filtros que se entendem sem pensar, com números e prazos legíveis de relance. O sistema recusa enfeite e identidade inventada; a qualidade está na precisão do alinhamento, do espaçamento e da formatação dos dados, não em efeitos.\n\nA densidade é de ferramenta de trabalho: base de 14px no computador (15px no celular), linhas de tabela de 12px de respiro vertical, superfícies brancas separadas por bordas de 1px e sombras curtas sobre um fundo cinza-azulado bem claro. Um único azul marca ação principal, seleção e foco; o resto da cor é reservado ao estado dos dados, sempre acompanhado de um ponto colorido.\n\nO tema escuro é automático e só existe via `prefers-color-scheme`; não há alternância manual. Os mesmos tokens são redefinidos no bloco escuro, então nenhum componente escolhe cor por tema.",
+    "keyCharacteristics": [
+      "Superfície branca sobre fundo cinza-azulado, texto quase preto.",
+      "Um azul só, para ação principal, seleção e foco.",
+      "Estado sempre com ponto colorido: verde em andamento, vermelho prazo vencido, azul agendada, cinza arquivado.",
+      "Fonte do sistema, números tabulares, bordas de 1px, sombras curtas e suaves.",
+      "Ícones SVG de traço único (24px de grade, traço 1.75).",
+      "Moeda no formato do usuário, R$1.900,00 sem espaço, inclusive nos rótulos compactos (R$1,9 mil).",
+      "Celular com barra inferior de 5 seções, botão flutuante com rótulo, tabelas em cartões e diálogos em folhas inferiores."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "O azul de ação (`#2563eb`) aparece só em ação principal, seleção e foco. Nunca como decoração, fundo de seção ou cor de título.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dot Rule",
+        "body": "Todo estado de dado leva o ponto colorido de 6px antes do texto, dentro de um selo em pílula. A cor sozinha nunca carrega o significado; o rótulo escrito (\"Prazo vencido\") vem sempre junto.",
+        "section": "colors"
+      },
+      {
+        "name": "The Token-Only Theme Rule",
+        "body": "O tema escuro é automático (`prefers-color-scheme`), sem botão de alternância. Componentes usam apenas as variáveis de `:root`; nenhuma cor é escolhida por tema dentro de um componente.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Todo número que se compara (valores, datas, contagens, paginação) usa `font-variant-numeric: tabular-nums`; colunas numéricas alinham à direita.",
+        "section": "typography"
+      },
+      {
+        "name": "The Brazilian Format Rule",
+        "body": "Moeda no formato R$1.900,00, sem espaço depois do R$, em toda a interface, incluindo rótulos compactos do gráfico (R$1,9 mil). Datas dd/mm/aaaa. CPF 111.111.111-11, CNPJ 11.222.333/0001-81 e alfanumérico 12.ABC.345/01DE-35, telefone (71)9 2222-2222 (fixo (71)2222-2222). Campos aplicam a máscara enquanto se digita; a moeda entra pelos centavos.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thumb Reach Rule",
+        "body": "No celular, todo alvo de toque tem pelo menos 44px (campos 46px, botões de folha 48px, ações de cartão 56px, botão flutuante 52px) e campos de texto usam 16px para o navegador não dar zoom.",
+        "section": "layout"
+      },
+      {
+        "name": "The Short Shadow Rule",
+        "body": "Sombras são suaves, difusas e na cor da tinta (`rgba(16, 24, 40, …)`); nunca deslocadas e duras, nunca coloridas. A borda de 1px faz o trabalho estrutural; a sombra só indica altura.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** usar o azul de ação (`#2563eb`) só para ação principal, seleção e foco.",
+      "**Do** acompanhar todo estado de dado com selo em pílula, ponto colorido e rótulo escrito: verde em andamento, vermelho prazo vencido, azul agendada, cinza arquivado.",
+      "**Do** formatar moeda como R$1.900,00 (sem espaço) em todo lugar, inclusive no compacto R$1,9 mil, e alinhar números à direita com algarismos tabulares.",
+      "**Do** separar superfícies com borda de 1px e sombra de repouso (`0 1px 2px rgba(16, 24, 40, .05)`), reservando sombras maiores para o que flutua.",
+      "**Do** desenhar ícones como SVG de traço único em grade de 24px, traço 1.75, `currentColor`.",
+      "**Do** manter, abaixo de 860px, barra inferior com as 5 seções, botão flutuante com rótulo, tabelas como cartões com Ligar/Arquivos/Editar/Mais, diálogos como folhas inferiores e busca em tela cheia.",
+      "**Do** usar só as variáveis de `:root` para cor, para o tema escuro automático funcionar sem código extra."
+    ],
+    "donts": [
+      "**Don't** adicionar botão de alternância de tema; o escuro segue `prefers-color-scheme`.",
+      "**Don't** usar o azul de ação como decoração, fundo de seção ou cor de título, nem confundi-lo com o azul informativo de \"Agendada\".",
+      "**Don't** indicar estado só com cor, sem ponto e sem rótulo.",
+      "**Don't** usar sombras duras deslocadas, sombras coloridas ou gradientes decorativos; o único gradiente é o brilho do esqueleto de carregamento.",
+      "**Don't** trocar a fonte do sistema por fonte de exibição, nem usar caracteres ou emoji como ícone.",
+      "**Don't** colocar rótulos pequenos (kickers) acima dos títulos de seção; o título e o subtítulo bastam.",
+      "**Don't** pôr cartão dentro de cartão; dentro de um painel, listas são linhas com divisória.",
+      "**Don't** criar alvos de toque menores que 44px no celular."
+    ]
+  }
+}

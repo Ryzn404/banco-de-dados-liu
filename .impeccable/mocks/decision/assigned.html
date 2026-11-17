@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Diário de Obra — esboço</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--capa:#1f3a2e;--capa-2:#2a4a3b;--folha:#f7f8f6;--linha:#dfe3dc;--tinta:#1b211d;--muted:#66706a;--caneta:#2346c4;--carimbo:#6d3fa6;--margem:#d1392c;--ok:#2f7d4f;--alerta:#b8740f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:Archivo,system-ui,sans-serif;color:var(--tinta);background:var(--folha);display:grid;grid-template-columns:232px 1fr}
+.rail{background:var(--capa);color:#e9efe9;padding:28px 18px;display:flex;flex-direction:column;gap:28px}
+.brand{font-stretch:75%;font-weight:800;font-size:26px;letter-spacing:.01em;line-height:1}
+.brand small{display:block;font-size:12px;font-weight:500;font-stretch:100%;opacity:.7;margin-top:6px;letter-spacing:.08em;text-transform:uppercase}
+.rail nav{display:flex;flex-direction:column;gap:2px}
+.rail a{color:#d5ded6;text-decoration:none;font-size:15px;padding:10px 12px;border-radius:6px;display:flex;justify-content:space-between}
+.rail a.on{background:var(--folha);color:var(--capa);font-weight:700}
+.rail a span{font-variant-numeric:tabular-nums;opacity:.6;font-size:13px}
+.rail .foot{margin-top:auto;font-size:13px;opacity:.8;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#5fd48b}
+main{padding:28px 40px;display:grid;grid-template-rows:auto auto 1fr;gap:26px;position:relative}
+main::before{content:"";position:absolute;left:24px;top:0;bottom:0;width:2px;background:var(--margem);opacity:.55}
+.head{display:flex;align-items:flex-end;justify-content:space-between}
+h1{font-size:40px;font-stretch:80%;font-weight:800;letter-spacing:-.01em}
+.stamp{border:2.5px solid var(--carimbo);color:var(--carimbo);border-radius:6px;padding:6px 14px;font-stretch:70%;font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase;display:flex;gap:12px;align-items:center}
+.stamp i{font-style:normal;font-size:13px;letter-spacing:.12em;opacity:.85}
+.actions{display:flex;gap:10px}
+.btn{font:inherit;font-size:15px;font-weight:700;padding:11px 18px;border-radius:8px;border:1.5px solid var(--caneta);color:var(--caneta);background:#fff}
+.btn.p{background:var(--caneta);color:#fff}
+.kpis{display:grid;grid-template-columns:1.4fr repeat(4,1fr);border-top:2px solid var(--tinta);border-bottom:1px solid var(--linha)}
+.kpi{padding:16px 18px 18px;border-left:1px solid var(--linha)}
+.kpi:first-child{border-left:0;padding-left:0}
+.kpi b{display:block;font-size:44px;font-stretch:75%;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.05}
+.kpi span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.kpi.warn b{color:var(--margem)}
+.grid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;min-height:0}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between}
+.entry{display:grid;grid-template-columns:64px 1fr auto;gap:14px;padding:13px 0;border-bottom:1px solid var(--linha);align-items:start}
+.t{color:var(--carimbo);font-weight:700;font-stretch:75%;font-size:17px;border:1.5px solid var(--carimbo);border-radius:4px;text-align:center;padding:2px 0}
+.entry p{font-size:16px;line-height:1.35}.entry p small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.entry em{font-style:normal;font-weight:700;font-variant-numeric:tabular-nums;font-size:16px}
+.tl{position:relative}
+.axis{display:grid;grid-template-columns:200px repeat(6,1fr);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-bottom:8px;border-bottom:1px solid var(--linha)}
+.row{display:grid;grid-template-columns:200px 1fr;align-items:center;height:52px;border-bottom:1px solid var(--linha)}
+.row p{font-size:15px;font-weight:600;line-height:1.2}.row p small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.track{position:relative;height:100%}
+.bar{position:absolute;top:17px;height:18px;border-radius:3px;background:var(--capa-2)}
+.bar.late{background:var(--margem)}.bar.next{background:transparent;border:2px dashed var(--capa-2)}
+.today{position:absolute;top:-30px;bottom:-4px;left:calc(200px + 56%);width:2px;background:var(--margem)}
+.today::after{content:"HOJE";position:absolute;top:0;left:6px;font-size:11px;font-weight:800;color:var(--margem);letter-spacing:.1em}
+.fat{display:flex;gap:14px;align-items:flex-end;height:96px;margin-top:20px}
+.fat div{flex:1;background:var(--caneta);border-radius:3px 3px 0 0;opacity:.85}
+</style></head><body>
+<aside class="rail">
+  <div class="brand">Gestão de Obras<small>Diário do Liu · pág. 319</small></div>
+  <nav>
+    <a class="on" href="#">Painel</a><a href="#">Clientes <span>12</span></a><a href="#">Obras <span>5</span></a><a href="#">Notas Fiscais <span>38</span></a><a href="#">Arquivos</a>
+  </nav>
+  <div class="foot"><i class="dot"></i>Tempo real conectado</div>
+</aside>
+<main>
+  <div class="head">
+    <div><div class="stamp">Dom · 15 nov 2026 <i>pág. 319</i></div><h1 style="margin-top:14px">Painel do dia</h1></div>
+    <div class="actions"><button class="btn">Anexar foto</button><button class="btn p">+ Lançar nota fiscal</button></div>
+  </div>
+  <section class="kpis">
+    <div class="kpi"><b>R$ 48.250,00</b><span>Faturado em novembro</span></div>
+    <div class="kpi"><b>4</b><span>Obras em andamento</span></div>
+    <div class="kpi warn"><b>1</b><span>Prazo vencido</span></div>
+    <div class="kpi"><b>7</b><span>Notas no mês</span></div>
+    <div class="kpi"><b>12</b><span>Clientes ativos</span></div>
+  </section>
+  <section class="grid">
+    <div>
+      <h2>Lançamentos de hoje <span>3</span></h2>
+      <div class="entry"><span class="t">09:12</span><p>Nota fiscal 000.142 lançada<small>Reforma Ap. 302 · Marta Lima</small></p><em>R$ 6.800,00</em></div>
+      <div class="entry"><span class="t">10:40</span><p>2 fotos anexadas à obra<small>Casa Itapuã · Joaquim Reis</small></p><em></em></div>
+      <div class="entry"><span class="t">14:05</span><p>Obra iniciada<small>Galpão Lauro de Freitas · Construtora Brisa</small></p><em></em></div>
+      <h2 style="margin-top:22px">Faturamento · últimos 6 meses</h2>
+      <div class="fat"><div style="height:44%"></div><div style="height:61%"></div><div style="height:38%"></div><div style="height:72%"></div><div style="height:90%"></div><div style="height:66%"></div></div>
+    </div>
+    <div class="tl">
+      <h2>Obras na linha do tempo <span>set — fev</span></h2>
+      <div class="axis"><span></span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div>
+      <div style="position:relative">
+        <i class="today"></i>
+        <div class="row"><p>Reforma Ap. 302<small>Marta Lima</small></p><div class="track"><i class="bar" style="left:8%;width:62%"></i></div></div>
+        <div class="row"><p>Casa Itapuã<small>Joaquim Reis</small></p><div class="track"><i class="bar late" style="left:2%;width:48%"></i></div></div>
+        <div class="row"><p>Galpão Lauro de Freitas<small>Construtora Brisa</small></p><div class="track"><i class="bar" style="left:42%;width:55%"></i></div></div>
+        <div class="row"><p>Loja Rio Vermelho<small>Ana Prado</small></p><div class="track"><i class="bar" style="left:20%;width:44%"></i></div></div>
+        <div class="row"><p>Muro Stella Maris<small>Paulo Sá</small></p><div class="track"><i class="bar next" style="left:66%;width:22%"></i></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body></html>
